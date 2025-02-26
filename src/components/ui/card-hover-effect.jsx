@@ -1,6 +1,4 @@
 import { cn } from "@/lib/utils";
-import { Link } from "react-router-dom";
-import { Image } from "@nextui-org/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 

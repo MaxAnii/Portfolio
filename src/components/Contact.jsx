@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { Button, Input, Textarea } from "@nextui-org/react";
 import emailjs from "@emailjs/browser";
-import SocialMedia from "./Footer";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SectionLabel from "./SectionLabel";

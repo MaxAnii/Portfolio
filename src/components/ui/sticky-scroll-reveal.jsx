@@ -1,9 +1,5 @@
 "use client";
 import { Image } from "@nextui-org/react";
-import shareexpense from "../../assets/Project/shareexpense.png";
-import projectmanager from "../../assets/Project/projectManager2.png";
-import checkYourHistory from "../../assets/Project/checkYourHistory.png";
-import techNew from "../../assets/Project/techNews.png";
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
@@ -55,7 +51,7 @@ export function ExpandableCardDemo(props) {
 			</AnimatePresence>
 			<AnimatePresence>
 				{active && typeof active === "object" ? (
-					<div className="fixed inset-0 grid place-items-center z-[100]">
+					<div className="fixed inset-0 grid place-items-center z-[100] ">
 						<motion.button
 							key={`button-${active.title}-${id}`}
 							layout
@@ -73,22 +69,22 @@ export function ExpandableCardDemo(props) {
 						<motion.div
 							layoutId={`card-${active.title}-${id}`}
 							ref={ref}
-							className="w-full max-w-[400px] md:max-w-[700px] p-3 h-full md:h-fit md:max-h-[90%] flex flex-col bg-neutral-900 rounded-3xl overflow-hidden"
+							className="w-full max-w-[400px] md:max-w-[700px] p-3 h-full md:h-fit md:max-h-[90%] flex flex-col bg-neutral-800 rounded-3xl overflow-y-auto"
 						>
 							<motion.div layoutId={`image-${active.title}-${id}`}>
-								<div className={` lg:pt-0 lg:pl-5 px-3 pt-5 `}>
+								<div className={`flex justify-center  px-3 pt-5 `}>
 									<div>
 										<Image
 											isBlurred
 											src={active.src}
-											className="lg:w-[40vw]"
+											className="border-2"
 										></Image>
 									</div>
 								</div>
 							</motion.div>
 
 							<div>
-								<div className="flex justify-between items-start p-4">
+								<div className="flex justify-between items-start p-4 mt-3">
 									<div className="">
 										<motion.h3
 											layoutId={`title-${active.title}-${id}`}
@@ -102,15 +98,23 @@ export function ExpandableCardDemo(props) {
 										>
 											{active.description}
 										</motion.p>
-										<motion.p className="text-neutral-300 text-lg my-2">
-											<strong>Tech Stack:-</strong> {active.technologies}
-										</motion.p>
+										<motion.div className="text-neutral-300 text-lg my-2  mt-3 flex flex-wrap items-center gap-3">
+											<strong>Tech Stack:-</strong>{" "}
+											{active.technologies.split(",").map((elem, index) => (
+												<div
+													key={index}
+													className="text-[#FF6000] bg-[#ff620027] rounded-2xl p-2"
+												>
+													{elem}
+												</div>
+											))}
+										</motion.div>
 										<div className="flex justify-center gap-10 pt-5">
 											<div>
 												<a
 													href={active.github}
 													target="_blank"
-													className="text-[#FF6000] "
+													className="text-[#FF6000] hover:underline"
 												>
 													Github
 												</a>
@@ -120,7 +124,7 @@ export function ExpandableCardDemo(props) {
 													<a
 														href={active.liveDemo}
 														target="_blank"
-														className="text-[#FF6000] "
+														className="text-[#FF6000] hover:underline"
 													>
 														Live Demo
 													</a>
