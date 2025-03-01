@@ -1,14 +1,14 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Button, Input, Textarea } from "@nextui-org/react";
 import emailjs from "@emailjs/browser";
 import SectionLabel from "./SectionLabel";
 import toast, { Toaster } from "react-hot-toast";
 const Contact = () => {
 	const form = useRef();
-
+	const [disableButton, setDisableButton] = useState(false);
 	const sendMail = async (e) => {
 		e.preventDefault();
-
+		setDisableButton(true);
 		emailjs
 			.sendForm(
 				import.meta.env.VITE_SERVICE_ID,
@@ -24,7 +24,8 @@ const Contact = () => {
 				(error) => {
 					console.log(error.text);
 				}
-			);
+			)
+			.finally(setDisableButton(false));
 	};
 	return (
 		<div className="bg-neutral-950 pt-10">
@@ -77,9 +78,13 @@ const Contact = () => {
 					</div>
 					<div className="flex justify-end pt-3">
 						<Button
-							// color="warning"
+							disabled={disableButton}
 							variant="bordered"
-							className="text-[#FF6000] hover:bg-[#FF6000] hover:text-white shadow-xl mt-3"
+							className={`${
+								disableButton
+									? "cursor-not-allowed"
+									: "hover:bg-[#FF6000] hover:text-white "
+							}text-[#FF6000] shadow-xl mt-3`}
 							type="submit"
 						>
 							Send
