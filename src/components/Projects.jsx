@@ -12,7 +12,6 @@ const Projects = () => {
 		fetcher
 			.fetchInsights()
 			.then((files) => {
-				console.log(files);
 				setData(files);
 			})
 			.finally(setShowLoader(false));

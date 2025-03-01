@@ -52,10 +52,6 @@ const Hero = () => {
 			<div data-aos="fade-left">
 				<CardContainer className="inter-var">
 					<CardBody className="shadow-[0px_0px_300px_41px_rgba(250,248,241,.5)] relative group/card hover:border-2 hover:shadow-inner hover:p-2 transition-all  w-auto  h-auto rounded-xl ">
-						{/* <CardItem
-							translateZ="100"
-							className="w-full mt-4  rounded-2xl "
-						> */}
 						<Image
 							src={hero}
 							alt="Hero Image"

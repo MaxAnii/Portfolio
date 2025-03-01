@@ -15,7 +15,6 @@ export const FloatingDock = ({ items, desktopClassName, mobileClassName }) => {
 	return (
 		<div className="fixed left-5 md:left-1/2 -translate-x-1/2 md:bottom-2 z-50">
 			<FloatingDockDesktop items={items} className={desktopClassName} />
-			<FloatingDockMobile items={items} className={mobileClassName} />
 		</div>
 	);
 };
