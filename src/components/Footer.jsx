@@ -37,7 +37,11 @@ const Footer = () => {
 						// variant="bordered"
 						className=" bg-[#FF6000] text-white shadow-xl "
 					>
-						<a href={resume} download={"Ansar ul haq"}>
+						<a
+							href="https://projectbanners.s3.eu-north-1.amazonaws.com/certificate/Ansar's+Resume.pdf"
+							target="_blank"
+							download={"Ansar ul haq"}
+						>
 							Download Resume
 						</a>
 					</Button>{" "}
