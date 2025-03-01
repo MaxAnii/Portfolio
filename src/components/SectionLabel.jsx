@@ -3,9 +3,8 @@ import React from "react";
 const SectionLabel = ({ label }) => {
 	return (
 		<div className="relative text-center mb-6">
-			<h2 className="text-5xl font-dancing bg-clip-text h-20 text-transparent bg-gradient-to-b from-gray-300 to-gray-500 tracking-tight inline-block relative">
+			<h2 className="p-2 text-4xl md:text-5xl font-dancing bg-clip-text h-20 text-transparent bg-gradient-to-b from-gray-300 to-gray-500 tracking-tight inline-block relative">
 				{label}
-				{/* Hand-drawn underline */}
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 1283 132"

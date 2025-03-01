@@ -6,6 +6,7 @@ import Projects from "../components/Projects";
 import Experience from "../components/Experience";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import "../index.css";
 const Home = () => {
 	return (
 		<div>

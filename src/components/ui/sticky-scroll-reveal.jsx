@@ -6,12 +6,12 @@ import { useOutsideClick } from "@/hooks/use-outside-click";
 
 export function ExpandableCardDemo(props) {
 	const projects = props.data.map((project) => ({
-		title: project.title,
-		src: project.banner,
-		description: `• ${project.description}`,
-		technologies: project.techStack,
-		github: project.github,
-		liveDemo: project.live || null,
+		title: project.fileData.title,
+		src: project.fileData.banner,
+		description: `• ${project.fileData.description}`,
+		technologies: project.fileData.techStack,
+		github: project.fileData.github,
+		liveDemo: project.fileData.live || null,
 	}));
 
 	const [active, setActive] = useState(null);
@@ -153,13 +153,13 @@ export function ExpandableCardDemo(props) {
 					</div>
 				) : null}
 			</AnimatePresence>
-			<ul className="flex flex-wrap lg:grid lg:grid-cols-3 gap-6  rounded-xl cursor-pointer p-3  shadow-2xl">
+			<ul className="flex flex-wrap lg:grid lg:grid-cols-3 gap-6  rounded-xl cursor-pointer p-3  shadow-2xl ">
 				{projects.map((project) => (
 					<motion.div
 						layoutId={`card-${project.title}-${id}`}
 						key={project.title}
 						onClick={() => setActive(project)}
-						className="flex  hover:bg-neutral-900 rounded-xl cursor-pointer p-3 border-2  shadow-2xl"
+						className="flex  hover:bg-neutral-900 rounded-xl cursor-pointer p-3 border-2  shadow-2xl pointer "
 					>
 						<div className="" data-aos="zoom-in">
 							<motion.div layoutId={`image-${project.title}-${id}`}>

@@ -1,16 +1,13 @@
 import React, { useRef } from "react";
 import { Button, Input, Textarea } from "@nextui-org/react";
 import emailjs from "@emailjs/browser";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import SectionLabel from "./SectionLabel";
-
+import toast, { Toaster } from "react-hot-toast";
 const Contact = () => {
 	const form = useRef();
+
 	const sendMail = async (e) => {
 		e.preventDefault();
-
-		toast("Sending mail");
 
 		emailjs
 			.sendForm(
@@ -21,8 +18,8 @@ const Contact = () => {
 			)
 			.then(
 				(result) => {
-					toast("mail send successfully");
 					form.current.reset();
+					toast.success("Message Recieved.");
 				},
 				(error) => {
 					console.log(error.text);
@@ -32,7 +29,7 @@ const Contact = () => {
 	return (
 		<div className="bg-neutral-950 pt-10">
 			{" "}
-			<ToastContainer position="top-right" theme="dark" newestOnTop={false} />
+			<Toaster position="top-center" reverseOrder={false} />
 			<SectionLabel
 				label={"Get in touch"}
 				context={"Feel free to drop me a line - Contact me"}
