@@ -1,7 +1,6 @@
 import { Button } from "@nextui-org/react";
 import React from "react";
 import { FaTwitter, FaLinkedin, FaGithub, FaDiscord } from "react-icons/fa";
-import resume from "@/assets/resume.pdf";
 const Footer = () => {
 	const icons = [
 		{
